@@ -3,36 +3,35 @@
 
 ## 🚀 Project Overview
 
-Este proyecto aplica técnicas de Machine Learning para identificar clientes con alta probabilidad de generar valor comercial futuro.
+This project applies machine learning techniques to identify customers with a high probability of generating future business value.
 
-Representa la evolución predictiva de mi proyecto anterior de Business Intelligence:
+It represents the predictive evolution of my previous business intelligence project.
 
 ---
 ## 📊 Retail Sales Analysis Supermercados Pronta <br>
 👉 (https://github.com/DiegoFCd/Pronta_Supermercados) 
 
-Mientras que el proyecto original de BI se centraba en comprender los patrones históricos de ventas y el comportamiento del cliente, 
-este proyecto se centra en predecir qué clientes tienen más probabilidades de convertirse en Clientes de Alto Valor en el futuro.
+While the original BI project focused on understanding historical sales patterns and customer behavior,
+this project focuses on predicting which customers are most likely to become High-Value Customers in the future.
 
 ---
 <br>
 
 ## 🎯 Business Objective
 
-Las empresas suelen invertir recursos de marketing y retención en toda su base de clientes sin distinguir a aquellos con mayor potencial de ingresos futuros.
+Companies often invest marketing and retention resources across their entire customer base without distinguishing those with the greatest potential for future revenue.
 
-El objetivo de este proyecto es identificar a los Clientes de Alto Valor con anticipación, lo que permite una asignación más eficiente de los esfuerzos de marketing, los programas de fidelización y las estrategias de retención.
-
+The goal of this project is to identify High-Value Customers proactively, enabling a more efficient allocation of marketing efforts, loyalty programs, and retention strategies.
 ---
 <br>
 
 ## 📈 Project Objectives
-- Analizar el comportamiento de compra del cliente
-- Desarrollar funcionalidades orientadas al negocio
-- Estimar el valor futuro del cliente
-- Identificar clientes de alto valor
-- Entrenar y evaluar un modelo de aprendizaje automático
-- Traducir los resultados del modelo en información útil para el negocio
+- Analyze customer purchasing behavior
+- Develop business-oriented functionalities
+- Estimate future customer value
+- Identify high-value customers
+- Train and evaluate a machine learning model
+- Translate model results into actionable business insights
 
 ---
 <br>
@@ -55,27 +54,27 @@ High Value Customer Prediction
 
 ## 💡 Dataset
 
-**El proyecto utiliza datos transaccionales de venta minorista a nivel de cliente.**
+**This project uses customer-level retail transactional data.**
 
-El conjunto de datos original contiene:
+The original dataset contains:
 
-- ID del cliente
-- Información de la factura
-- Compras de productos
-- Fechas de transacción
-- Cantidad comprada
-- Ingresos generados
+- Customer ID
+- Invoice information
+- Product purchases
+- Transaction dates
+- Quantity purchased
+- Revenue generated
 
-**Durante la fase de Features Engineering, el conjunto de datos se transformó en un conjunto de datos analíticos centrado en el cliente, que incluye:**
+During the Features Engineering phase, the dataset was transformed into a customer-centric analytical dataset, which includes:
 
-- Recencia
-- Frecuencia
-- Valor monetario
-- Tiempo promedio de compra
-- Intervalo promedio de compra
-- Valor de vida del cliente futuro (CLV futuro)
-
-**Estas características se utilizaron posteriormente para entrenar el modelo de Machine Learning responsable de identificar a los clientes de alto valor.**
+- Recency
+- Frequency
+- Monetary value
+- Average purchase time
+- Average purchase interval
+- Future customer lifetime value (future CLV)
+  
+**These characteristics were subsequently used to train the machine learning model responsible for identifying high-value customers.**
 
 ---
 <br>
@@ -84,31 +83,30 @@ El conjunto de datos original contiene:
 
 **🔧 Features Engineering**
 
-Se crearon variables de comportamiento del cliente a partir del historial de transacciones.
+Customer behavior variables were created from transaction history.
 
-**Principales características:**
+**Key features:**
 
 - Average Ticket
-- Monetary Value
+- ​​Monetary Value
 - Recency
 - Average Purchase Interval
 
-Estas variables resumen el comportamiento de compra y proporcionan información relevante para la predicción del valor del cliente.
+These variables summarize purchasing behavior and provide relevant information for predicting customer value.
 
 ---
 <br>
 
 ## 🎯 Target Construction
 
-El valor de vida del cliente futuro (CLV futuro) se calculó utilizando transacciones futuras.
+Future customer lifetime value (future CLV) was calculated using future transactions.
 
-Los clientes se clasificaron en:
+Customers were classified as follows:
 
-- 1 = Cliente de alto valor
-- 0 = Cliente habitual
+- 1 = High-value customer
+- 0 = Regular customer
 
-Esta transformación permitió abordar el problema como una tarea de clasificación binaria.
-
+This transformation allowed the problem to be approached as a binary classification task.
 --- 
 <br>
 
@@ -116,14 +114,14 @@ Esta transformación permitió abordar el problema como una tarea de clasificaci
 
 **Random Forest Classifier**
 
-El modelo se entrenó para identificar a los clientes con mayor probabilidad de convertirse en clientes de alto valor.
+The model was trained to identify customers most likely to become high-value customers.
 
-¿Por qué RandomForest?
+Why RandomForest?
 
-- Maneja relaciones no lineales
-- Funciona bien con características diseñadas
-- Proporciona interpretación de la importancia de las características
-- Robusto ante comportamientos de venta volátiles
+- Handles nonlinear relationships
+- Works well with designed features
+- Provides an interpretation of feature importance
+- Robust against volatile sales behavior
 
 ---
 <br>
@@ -139,10 +137,9 @@ El modelo se entrenó para identificar a los clientes con mayor probabilidad de 
 | F1-Score | 32% |
 |Threshold Optimization | 0.40 |
 
-El umbral de clasificación se ajustó para priorizar la detección de clientes de alto valor.
+The classification threshold was adjusted to prioritize the detection of high-value customers.
 
-Esto aumentó la exhaustividad a aproximadamente un 78%, lo que permitió al modelo identificar a la mayoría de los futuros clientes de alto valor, aunque aceptando un mayor número de falsos positivos.
-
+This increased the accuracy to approximately 78%, allowing the model to identify the majority of prospective high-value customers, although accepting a higher number of false positives.
 ---
 <br>
 
@@ -154,36 +151,35 @@ Esto aumentó la exhaustividad a aproximadamente un 78%, lo que permitió al mod
 
 ### 📊 Confusion Matrix Interpretation
 
-Tras la optimización del umbral, el modelo identificó correctamente aproximadamente el **78 % de los futuros clientes de alto valor**.
+After optimizing the threshold, the model correctly identified approximately **78% of potential high-value customers**.
 
-El umbral se ajustó para priorizar la detección de clientes (Recall), asegurando así la captación de la mayoría de los clientes con alto potencial, incluso a costa de generar falsos positivos adicionales.
+The threshold was adjusted to prioritize customer recall, thus ensuring the acquisition of the majority of high-potential customers, even at the cost of generating additional false positives.
 
 ---
 <br>
 
 ## 🔍 Feature Importance
 
-Las variables más influyentes para predecir el valor futuro del cliente fueron:
+The most influential variables for predicting future customer value were:
 
 - Average Ticket
-- Monetary Value
+- ​​Monetary Value
 - Recency
 - Average Purchase Interval
 
-**Estas características proporcionan información valiosa sobre los patrones de comportamiento asociados a los clientes de alto valor.** 
-
+These characteristics provide valuable information about the behavioral patterns associated with high-value customers.
 ---
 <br>
 
 ## 💼 Business Value
 
-Este modelo puede ayudar a las organizaciones a:
+This model can help organizations to:
 
-- Priorizar a los clientes con alto potencial
-- Mejorar la segmentación de marketing
-- Optimizar las campañas de fidelización
-- Aumentar el valor de vida del cliente
-- Apoyar la toma de decisiones basada en datos
+- Prioritize high-potential customers
+- Improve marketing segmentation
+- Optimize loyalty campaigns
+- Increase customer lifetime value
+- Support data-driven decision-making
 
 ---
 <br>
@@ -205,8 +201,8 @@ Este modelo puede ayudar a las organizaciones a:
 
  📊 Retail Sales Analysis Supermercados Pronta 👉 (https://github.com/DiegoFCd/Pronta_Supermercados)
 
-Este proyecto amplía el análisis original de Business Intelligence, pasando de:
+This project expands on the original Business Intelligence analysis, moving from:
 
-"¿Qué sucedió?" a ¿Qué es probable que suceda a continuación?"
+"What happened?" to "What is likely to happen next?"
 
-Mediante análisis predictivo y aprendizaje automático.
+Through predictive analytics and machine learning.
